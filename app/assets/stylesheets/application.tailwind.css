@@ -1,0 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "shoelace/light";
+@import "shoelace/dark";  /* Optional */
