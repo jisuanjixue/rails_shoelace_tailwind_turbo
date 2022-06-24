@@ -21,9 +21,6 @@ gem "jsbundling-rails"
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 
-# Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
-gem "stimulus-rails"
-
 # Bundle and process CSS [https://github.com/rails/cssbundling-rails]
 gem "cssbundling-rails"
 
@@ -32,6 +29,8 @@ gem "jbuilder"
 
 # Use Redis adapter to run Action Cable in production
 gem "redis", "~> 4.0"
+# testing framework for Rails 5+.
+gem 'rspec-rails', '~> 6.0.0.rc1'
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
