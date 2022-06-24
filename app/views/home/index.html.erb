@@ -1,15 +1,4 @@
-<sl-dialog label="Dialog" class="dialog-overview">
-  <%= link_to "报价器", quotes_path, class: "main-link-style" %>
-  <sl-button slot="footer" variant="primary">Close</sl-button>
-</sl-dialog>
-
-<sl-button>Open Dialog</sl-button>
-
-<script>
-  const dialog = document.querySelector('.dialog-overview');
-  const openButton = dialog.nextElementSibling;
-  const closeButton = dialog.querySelector('sl-button[slot="footer"]');
-
-  openButton.addEventListener('click', () => dialog.show());
-  closeButton.addEventListener('click', () => dialog.hide());
-</script>
+<div class="flex flex-col min-h-full bg-red-50 text-gray-700 leading-6 font-sans">
+<%= render "navbar" %>
+  <div class="flex justify-center px-4 py-16 bg-base-200">Hello!</div>
+</div>
