@@ -1,4 +1,20 @@
 <div class="flex flex-col min-h-full bg-red-50 text-gray-700 leading-6 font-sans">
   <%= render "navbar" %>
   <div class="flex justify-center px-4 py-16 bg-base-200">Hello!</div>
+  <button id="request">Make SWAPI request</button>
+  <div id="response"></div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const responseDiv = document.getElementById("response");
+  const button = document.getElementById("request");
+
+  button.addEventListener("click", () => {
+    fetch("https://swapi.dev/api/planets/1/")
+      .then((response) => response.text())
+      .then((text) => (responseDiv.innerHTML = text));
+  });
+});
+
+</script>
