@@ -1,43 +1,49 @@
 class QuotesController < ApplicationController
-    before_action :set_quote, only: [:show, :edit, :update, :destroy]
+  before_action :set_quote, only: [:show, :edit, :update, :destroy]
 
-    def index
-        @quotes = Quote.all
+  def index
+    @quotes = Quote.all
+  end
+
+  def new
+    @quote = Quotes.new
+  end
+
+  def show
+  end
+
+  def create
+    @quote = Quotes.new(quote_params)
+    if @quote.save
+      redirect_to quote_path, notice: t(".treated")
+    else
+      render :new
     end
+  end
 
-    def new
-        @quote = Quotes.new
+  def edit
+  end
+
+  def update
+    if @quote.update(quote_params)
+      redirect_to quote_path, notice: t(".updated")
+    else
+      render :edit
     end
+  end
 
-    def create
-        @quote = Quotes.new(quote_params)
-        if @quote.save
-            redirect_to quote_path, notice: 'Quote was successfully created.'
-       else
-        render :new
-       end
-    end
+  def destroy
+    @quote.destroy
+    redirect_to quote_path, notice: t(".destroyed")
+  end
 
-    def update
-        if @quote.update(quote_params)
-            redirect_to quote_path, notice: 'Quote was successfully updated.'
-        else
-            render :edit
-        end
-    end
+  private
 
-    def destroy
-        @quote.destroy
-        redirect_to quote_path, notice: 'Quote was successfully destroyed.'
-    end
+  def set_quote
+    @quote = Quote.find(params[:id])
+  end
 
-    private
-
-    def set_quote
-        @quote = Quote.find(params[:id])
-    end
-
-    def quote_params
-        params.require(:quote).permit(:name)
-    end
+  def quote_params
+    params.require(:quote).permit(:name)
+  end
 end

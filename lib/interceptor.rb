@@ -65,7 +65,7 @@ module Interceptor
   # @url can be a regexp or a string
   # @method can be a string or a symbol, an can be uppercase or lowercase
   def intercept(url, response = "", method = :any)
-    @interceptions << { url: url, method: method, response: response }
+    @interceptions << {url: url, method: method, response: response}
   end
 
   def start_intercepting
@@ -117,7 +117,7 @@ module Interceptor
   # For example:
   # - [{url: "https://external.api.com", response: ""}, {url: another_domain, response: fixed_response, method: :get}]
   def default_interceptions
-    [{ url: /google.*\.com/, method: :any, response: "" }]
+    [{url: /google.*\.com/, method: :any, response: ""}]
   end
 
   # Override this method to add more allowed requests that shouldn't be intercepted
@@ -177,7 +177,7 @@ module Interceptor
 
   def log_request(url, method)
     message = "External JavaScript request not intercepted: #{method} #{url}"
-    puts message
+    Rails.logger.debug message
     Rails.logger.warn message
   end
 end
