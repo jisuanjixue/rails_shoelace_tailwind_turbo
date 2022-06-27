@@ -52,16 +52,18 @@ gem "rails-i18n", "~> 7.0.0" # For 7.0.0
 
 group :development, :test do
   # testing framework for Rails 5+.
-  gem "rspec-rails", "~> 6.0.0.rc1"
   # Adds support for Capybara system testing and selenium driver
   gem "capybara"
   gem "selenium-webdriver", ">= 4.0"
   gem "selenium-devtools"
   # Easy installation and use of web drivers to run system tests with browsers
   gem "webdrivers"
+  # rspec test
+  gem "rspec-rails", "~> 6.0.0.rc1"
   gem "standard", require: false
   gem "rubocop-rails", require: false
   gem "rubocop-rspec", require: false
+  gem "shoulda-matchers"
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri mingw x64_mingw]
 end

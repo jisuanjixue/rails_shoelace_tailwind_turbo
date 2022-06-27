@@ -13,6 +13,13 @@ AllCops:
     - public/**/*
     - vendor/**/*
 
+Layout/ArgumentAlignment:
+  Enabled: true
+  EnforcedStyle: with_fixed_indentation
+
+Layout/FirstHashElementIndentation:
+  Enabled: false
+
 Rails:
   Enabled: true # enable rubocop-rails cops
 RSpec:
