@@ -22,6 +22,10 @@ Layout/FirstHashElementIndentation:
 
 Rails:
   Enabled: true # enable rubocop-rails cops
+  
+Rails/FilePath:
+  Enabled: false
+
 RSpec:
   Enabled: true # enable rubocop-rspec cops
 RSpec/DescribeClass:

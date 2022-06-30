@@ -1,16 +1,22 @@
 require "rails_helper"
 
 RSpec.describe Quote, type: :model do
-  subject {
-    described_class.new(name: "Anything", created_at: DateTime.now, updated_at: DateTime.now + 1.week, id: 1)
-  }
+  let(:quote) { build(:quote) }
+  # subject {
+  #   described_class.new(name: "Anything", created_at: DateTime.now, updated_at: DateTime.now + 1.week, id: 1)
+  # }
+
+  it "initializes quote with name" do
+    # expect(quote.name).to be_kind_of(String)
+    expect(quote.name).to quote.name
+  end
 
   it "is valid with valid attributes" do
-    expect(subject(:quote)).to be_valid
+    expect(quote).to be_valid
   end
 
   it "is not valid without a name" do
-    subject(:quote).name = nil
-    expect(subject(:quote)).not_to be_valid
+    quote.name = nil
+    expect(quote.name).not_to be_valid
   end
 end
