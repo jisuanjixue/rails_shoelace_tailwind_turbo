@@ -4,9 +4,11 @@
   <p class="text-center italic max-w-2xl mr-auto ml-auto text-gray-600">
   This single-page quote editor was build with Turbo and... a single line of custom JavaScript for the flash message animation. If you want to learn how it is made, you can read the Turbo Rails tutorial.
   </p>
-  <div class="flex flex-wrap gap-2 justify-between mt-3">
+ <div class="flex flex-wrap gap-2 justify-between mt-3">
     <h1>Quotes</h1>
-    <button class="btn btn-active btn-secondary">Button</button>
+      <%= link_to "New quote",
+                new_quote_path,
+                class: "btn btn-active btn-secondary" %>
   </div>
    <%# <div class="flex justify-center px-4 py-16 bg-base-200">Hello!</div>
     <button id="request">Make SWAPI request</button>
