@@ -15,7 +15,10 @@ class QuotesController < ApplicationController
   def create
     @quote = Quote.new(quote_params)
     if @quote.save
-      redirect_to quotes_path, notice: t(".created")
+      respond_to do |format|
+        format.html {  redirect_to quotes_path, notice: t(".created") }
+        format.turbo_stream
+      end
     else
       render :new, status: :unprocessable_entity
     end
@@ -34,7 +37,11 @@ class QuotesController < ApplicationController
 
   def destroy
     @quote.destroy
-    redirect_to quote_path, notice: t(".destroyed")
+    respond_to do |format|
+      format.html {  redirect_to quote_path, notice: t(".destroyed") }
+      format.turbo_stream
+    end
+   
   end
 
   private

@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 #
 # Uncomment this and change the path if necessary to include your own
 # components.
@@ -13,8 +14,8 @@ SimpleForm.setup do |config|
   # wrapper, change the order or even add your own to the
   # stack. The options given below are used to wrap the
   # whole input.
-   # Wrappers configration
-   config.wrappers :default, class: "form__group" do |b|
+  # Wrappers configration
+  config.wrappers :default, class: "form__group" do |b|
     b.use :html5
     b.use :placeholder
     b.use :label, class: "visually-hidden"
@@ -23,13 +24,12 @@ SimpleForm.setup do |config|
 
   # Default configuration
   config.generate_additional_classes_for = []
-  config.default_wrapper                 = :default
-  config.button_class                    = "btn"
-  config.label_text                      = lambda { |label, _, _| label }
-  config.error_notification_tag          = :div
-  config.error_notification_class        = "error_notification"
-  config.browser_validations             = false
-  config.boolean_style                   = :nested
-  config.boolean_label_class             = "form__checkbox-label"
-  
+  config.default_wrapper = :default
+  config.button_class = "btn"
+  config.label_text = lambda { |label, _, _| label }
+  config.error_notification_tag = :div
+  config.error_notification_class = "error_notification"
+  config.browser_validations = false
+  config.boolean_style = :nested
+  config.boolean_label_class = "form__checkbox-label"
 end
