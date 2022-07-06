@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get "home/index"
+  # get "home/index"
 
   resources :quotes
 
-  root to: "home#index"
+  root to: "quotes#index"
 end

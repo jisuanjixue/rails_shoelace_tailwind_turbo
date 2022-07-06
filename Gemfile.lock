@@ -309,6 +309,7 @@ DEPENDENCIES
   rails-i18n (~> 7.0.0)
   redis (~> 4.0)
   rspec-rails (~> 6.0.0.rc1)
+  rubocop
   rubocop-rails
   rubocop-rspec
   selenium-devtools
