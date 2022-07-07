@@ -36,3 +36,4 @@
 /node_modules
 
 /public/shoelace-assets
+/sorbet/rbi/hidden-definitions/errors.txt

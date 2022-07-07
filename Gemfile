@@ -34,6 +34,8 @@ gem "simple_form", "~> 5.1.0"
 
 gem "devise", "~> 4.8.1"
 
+gem "sorbet-static-and-runtime"
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
@@ -65,7 +67,7 @@ group :development, :test do
   gem "webdrivers"
 
   gem "standard", require: false
-  gem 'rubocop', require: false
+  gem "rubocop", require: false
   gem "rubocop-rails", require: false
   gem "rubocop-rspec", require: false
   gem "shoulda-matchers"
