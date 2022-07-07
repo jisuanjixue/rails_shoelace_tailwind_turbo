@@ -13,10 +13,10 @@ class QuotesController < ApplicationController
   end
 
   def create
-    @quote =current_company.quotes.build(quote_params)
+    @quote = current_company.quotes.build(quote_params)
     if @quote.save
       respond_to do |format|
-        format.html {  redirect_to quotes_path, notice: t(".created") }
+        format.html { redirect_to quotes_path, notice: t(".created") }
         format.turbo_stream
       end
     else
@@ -38,10 +38,9 @@ class QuotesController < ApplicationController
   def destroy
     @quote.destroy
     respond_to do |format|
-      format.html {  redirect_to quote_path, notice: t(".destroyed") }
+      format.html { redirect_to quote_path, notice: t(".destroyed") }
       format.turbo_stream
     end
-   
   end
 
   private
