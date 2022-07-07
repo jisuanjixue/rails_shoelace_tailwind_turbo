@@ -1,14 +1,20 @@
 <div class="flex flex-col min-h-full bg-red-50 text-gray-700 leading-6 font-sans h-screen h-60">
-  <%= render "navbar" %>
   <main class="pr-4 pl-4 max-w-5xl w-full ml-auto mr-auto">
+
+    <!-- <%= render template: "quotes/index" %> -->
+    <h1>quote editor</h1>
     <p class="text-center italic max-w-2xl mr-auto ml-auto text-gray-600">
       This single-page quote editor was build with Turbo and... a single line of custom JavaScript for the flash message
       animation. If you want to learn how it is made, you can read the Turbo Rails tutorial.
     </p>
-    <!-- <%= render template: "quotes/index" %> -->
-    <div class="flex justify-center px-4 py-16 bg-base-200">Hello!</div>
+    <% if user_signed_in? %>
+    <%= link_to "View quotes", quotes_path, class: "btn btn--dark" %>
+    <% else %>
+    <%= link_to "Sign in", new_user_session_path, class: "btn btn--dark" %>
+    <% end %>
+
     <button id="request">Make SWAPI request</button>
-    <div id="response"></div> 
+    <div id="response"></div>
   </main>
 </div>
 
